@@ -1,0 +1,78 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OCR File Upload</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0ecf8, #fdfbfb);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 100px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+      padding: 14px;
+      border: 2px dashed #bdc3c7;
+      border-radius: 10px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      transition: border 0.3s;
+    }
+
+    input[type="file"]:hover {
+      border-color: #3498db;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Upload a Document for OCR</h2>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <button type="submit">Extract Text</button>
+    </form>
+  </div>
+</body>
+</html>
